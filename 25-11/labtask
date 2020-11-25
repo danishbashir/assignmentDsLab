@@ -1,0 +1,45 @@
+package queueTolinkedlist;
+
+
+public class QueueToLinkedList {
+Node forward;
+ Node backword;
+ public QueueToLinkedList ()
+ {
+  forward = null;
+  backword = null;
+ }
+ private class Node{
+ 
+  int i;
+  Node next;
+  Node(int i){
+   this.i = i;
+  }
+  public void displayData(){
+   System.out.println("i= " + i);
+  }
+ }
+ 
+ public void insertLast(int i){
+  Node newNode = new Node(i);
+  if(isEmpty()){
+   forward= newNode;
+  }else{
+
+   backword.next = newNode;
+  }
+  backword = newNode;
+ }
+ 
+ public int removeFirst(){  
+
+  int temp = forward.i;
+
+  if(forward.next == null){
+   backword = null;
+  }
+
+  forward = forward.next;
+  return temp;
+ }
